@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evening Cafe</title>
+  <link rel="stylesheet" href="nav.css">
+</head>
+<body class="light"><!-- change to dark for dark mode -->
+
+  <header class="navbar">
+    <div class="logo">☕ Evening Cafe</div>
+
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+      <li><a href="#menu" class="nav-link nav-btn" data-section="menu">Menu</a></li>
+      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="#" class="login" onclick="openLogin()">Login</a>
+      <a href="#" class="profile" id="profileLink" style="display: none;">Profile</a>
+      <a href="#" class="mode-btn" onclick="toggleMode()">🌙 Dark</a>
+    </div>
+  </header>
+
+  <div class="welcome-banner">
+    <p>Welcome to Evening Cafe</p>
+  </div>
+
+  <main class="content">
+    <!-- Home Section -->
+    <section id="home" class="section active">
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <div class="hero-content">
+          <h1>Discover The Art Of Perfect Coffee</h1>
+          <p>Experience The Rich And Bold Flavors Of Our Exquisite Coffee Blends, Crafted To Awaken Your Senses And Start Your Day Right.</p>
+          <div class="hero-buttons">
+            <button class="order-now-btn">Order Now <span>→</span></button>
+            <button class="explore-btn">Explore More</button>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h3>50+</h3>
+              <p>ITEM OF COFFEE</p>
+            </div>
+            <div class="stat-item">
+              <h3>20+</h3>
+              <p>Order Running</p>
+            </div>
+            <div class="stat-item">
+              <h3>2k+</h3>
+              <p>Happy Customer</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="image/coffee-cup.gif" alt="Coffee Cup" class="main-coffee-image">
+          <div class="floating-beans">
+            <div class="bean bean-1">☕</div>
+            <div class="bean bean-2">☕</div>
+            <div class="bean bean-3">☕</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coffee Filter Section -->
+      <div class="coffee-filter-section">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="black">Black</button>
+          <button class="filter-btn" data-filter="espresso">Espresso</button>
+          <button class="filter-btn" data-filter="doppio">Doppio</button>
+        </div>
+        <div class="coffee-cards">
+          <div class="coffee-card" data-category="espresso">
+            <img src="image/coffee1.jpg" alt="Cappuccino">
+            <h3>Cappuccino</h3>
+            <button class="card-order-btn">Order Now</button>
+          </div>
+          <div class="coffee-card" data-category="black">
+            <img src="image/coffee2.jpg" alt="Americano">
+            <h3>Americano</h3>
+            <button class="card-order-btn">Order Now</button>
+          </div>
+          <div class="coffee-card" data-category="espresso">
+            <img src="image/coffee-cup.gif" alt="Espresso">
+            <h3>Espresso</h3>
+            <button class="card-order-btn">Order Now</button>
+          </div>
+        </div>
+        <div class="navigation-arrows">
+          <button class="nav-arrow left">←</button>
+          <button class="nav-arrow right">→</button>
+        </div>
+      </div>
+
+      <!-- Customer Testimonials -->
+      <div class="testimonials-section">
+        <h2>What Our Customer Says</h2>
+        <div class="testimonial-card">
+          <img src="image/user.png" alt="Customer" class="customer-photo">
+          <div class="testimonial-content">
+            <div class="stars">★★★★★</div>
+            <p>"I Have Tested Evening Cafe Coffee Many Times. Really Amazing To Me. The Combination Was Very Good. One Thing Is To Serve Extraordinary Coffee With Evening Cafe. I Will Order From Evening Cafe For Any Of My Coffee Needs."</p>
+            <h4>Shalima Hayden</h4>
+          </div>
+          <button class="testimonial-arrow">→</button>
+        </div>
+      </div>
+
+      <!-- Coffee Heaven Section -->
+      <div class="coffee-heaven-section">
+        <div class="heaven-content">
+          <h2>Coffee Heaven</h2>
+          <p>Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s.</p>
+          <button class="view-all-btn">View All <span>→</span></button>
+        </div>
+        <div class="heaven-image">
+          <img src="image/coffee2.jpg" alt="Coffee Art" class="latte-art">
+        </div>
+      </div>
+
+      <!-- Newsletter Section -->
+      <div class="newsletter-section">
+        <h3>Stay Up To Date On News And Offers</h3>
+        <p>Be The First To Know About New Collections, Special Events, And What's Going On At Evening Cafe.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Enter Your Email Address" class="email-input">
+          <button class="newsletter-btn">Subscribe <span>→</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section">
+      <h2>Our Coffee Menu</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <img src="image/coffee1.jpg" alt="Espresso" class="menu-image">
+          <h3>Espresso</h3>
+          <p>Rich and bold, our signature espresso</p>
+          <div class="price">$3.50</div>
+          <button class="order-btn" onclick="addToCart('Espresso', 3.50)">Order Now</button>
+        </div>
+        <div class="menu-item">
+          <img src="image/coffee2.jpg" alt="Cappuccino" class="menu-image">
+          <h3>Cappuccino</h3>
+          <p>Perfect blend of espresso, steamed milk, and foam</p>
+          <div class="price">$4.25</div>
+          <button class="order-btn" onclick="addToCart('Cappuccino', 4.25)">Order Now</button>
+        </div>
+        <div class="menu-item">
+          <img src="image/coffee-cup.gif" alt="Latte" class="menu-image">
+          <h3>Latte</h3>
+          <p>Smooth and creamy with a hint of sweetness</p>
+          <div class="price">$4.75</div>
+          <button class="order-btn" onclick="addToCart('Latte', 4.75)">Order Now</button>
+        </div>
+        <div class="menu-item">
+          <img src="image/coffee1.jpg" alt="Americano" class="menu-image">
+          <h3>Americano</h3>
+          <p>Classic espresso with hot water</p>
+          <div class="price">$3.25</div>
+          <button class="order-btn" onclick="addToCart('Americano', 3.25)">Order Now</button>
+        </div>
+        <div class="menu-item">
+          <img src="image/coffee2.jpg" alt="Mocha" class="menu-image">
+          <h3>Mocha</h3>
+          <p>Chocolate and coffee in perfect harmony</p>
+          <div class="price">$5.00</div>
+          <button class="order-btn" onclick="addToCart('Mocha', 5.00)">Order Now</button>
+        </div>
+        <div class="menu-item">
+          <img src="image/coffee-cup.gif" alt="Macchiato" class="menu-image">
+          <h3>Macchiato</h3>
+          <p>Espresso with a dollop of foam</p>
+          <div class="price">$4.50</div>
+          <button class="order-btn" onclick="addToCart('Macchiato', 4.50)">Order Now</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <h2>About Evening Cafe</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Founded in 2020, Evening Cafe has been serving the finest coffee to our community. We believe that every cup should be an experience, crafted with love and attention to detail.</p>
+          <p>Our cafe is more than just a place to grab coffee - it's a gathering spot for friends, a workspace for professionals, and a haven for coffee lovers.</p>
+          <h3>Our Mission</h3>
+          <p>To provide exceptional coffee experiences while fostering community connections and supporting local artisans.</p>
+        </div>
+        <div class="founder-section">
+          <h3>Meet Our Founder</h3>
+          <div class="founder-card">
+            <img src="image/sr car.jpg" alt="Founder" class="founder-image">
+            <h4>Sarah Rodriguez</h4>
+            <p>Founder & Head Barista</p>
+            <p>"Coffee is not just a beverage, it's a passion that brings people together."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <h2>Contact Us</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <div class="contact-item">
+            <strong>📍 Address:</strong>
+            <p>123 Coffee Street<br>Downtown District<br>City, State 12345</p>
+          </div>
+          <div class="contact-item">
+            <strong>📞 Phone:</strong>
+            <p>(555) 123-4567</p>
+          </div>
+          <div class="contact-item">
+            <strong>✉️ Email:</strong>
+            <p>info@eveningcafe.com</p>
+          </div>
+          <div class="contact-item">
+            <strong>🕒 Hours:</strong>
+            <p>Monday - Friday: 6:00 AM - 8:00 PM<br>
+               Saturday - Sunday: 7:00 AM - 9:00 PM</p>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Send us a Message</h3>
+          <button class="open-modal-btn" onclick="openContactModal()">Open Message Form</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Login Popup -->
+  <div id="loginPopup" class="login-popup">
+    <div class="login-content">
+      <span class="close-btn" onclick="closeLogin()">&times;</span>
+      <h2>Login to Evening Cafe</h2>    
+      <form id="loginForm">
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit" class="login-submit-btn">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Animation -->
+  <div id="successAnimation" class="success-animation">
+    <div class="checkmark">✓</div>
+    <p>Login Successful!</p>
+  </div>
+
+  <!-- Shopping Cart -->
+  <div id="shoppingCart" class="shopping-cart">
+    <div class="cart-icon">
+      🛒
+      <span id="cartCount" class="cart-count">0</span>
+    </div>
+    <div class="cart-dropdown" id="cartDropdown">
+      <h3>Shopping Cart</h3>
+      <div id="cartItems" class="cart-items">
+        <p class="empty-cart">Your cart is empty</p>
+      </div>
+      <div class="cart-total">
+        <strong>Total: $<span id="cartTotal">0.00</span></strong>
+      </div>
+      <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+  </div>
+
+  <!-- WhatsApp Button -->
+  <div id="whatsappBtn" class="whatsapp-btn">
+    <a href="https://wa.me/9600295627" target="_blank">
+      <img src="image/whatsapp.png" style="width: 100%; height: 100%;" alt="WhatsApp">
+    </a>
+  </div>
+
+  <!-- Contact Modal -->
+  <div id="contactModal" class="contact-modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeContactModal()">&times;</span>
+      <h2>Send us a Message</h2>
+      <form id="contactModalForm">
+        <div class="form-group">
+          <label for="modalName">Your Name</label>
+          <input type="text" id="modalName" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="modalEmail">Your Email</label>
+          <input type="email" id="modalEmail" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="modalSubject">Subject</label>
+          <input type="text" id="modalSubject" name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="modalMessage">Message</label>
+          <textarea id="modalMessage" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="send-message-btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
